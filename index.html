@@ -1,153 +1,204 @@
-<!DOCTYPE html>
+<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Скачать AVO VPN | Зелёная версия</title>
-    <!-- 
-        Зелёный дизайн, но без "перегруза": чистые цвета, мягкие акценты.
-        Единственная кнопка скачивания, акцент на функциональности и спокойной природной гамме.
-        Без анимаций и излишеств, но в зелёном стиле. 
-    -->
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            /* Светлый зелёно-бежевый фон — свежо, но без кричащих оттенков */
-            background: #eef4e6;
-            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 1.5rem;
-        }
-
-        /* Карточка-контейнер с лёгким зелёным акцентом */
-        .card {
-            background: #ffffff;
-            border-radius: 24px;
-            box-shadow: 0 8px 20px rgba(40, 70, 30, 0.08);
-            padding: 2.5rem 2rem;
-            text-align: center;
-            max-width: 480px;
-            width: 100%;
-            transition: none;
-            border: 1px solid #c8ddb5;
-        }
-
-        /* Небольшой зелёный заголовок (просто для акцента, не мешает кнопке) */
-        .title {
-            font-size: 1.7rem;
-            font-weight: 500;
-            color: #2c5a2a;
-            margin-bottom: 0.5rem;
-            letter-spacing: -0.3px;
-        }
-
-        .sub {
-            font-size: 0.9rem;
-            color: #5b7c4c;
-            margin-bottom: 2rem;
-            border-bottom: 1px solid #ddebd0;
-            display: inline-block;
-            padding-bottom: 6px;
-        }
-
-        /* Зелёная кнопка: основная, яркая, но без "крутых" эффектов вроде неона */
-        .download-btn {
-            display: inline-block;
-            background-color: #2e7d32;   /* Глубокий зелёный, природный */
-            color: #ffffff;
-            border: none;
-            padding: 16px 36px;
-            font-size: 1.7rem;
-            font-weight: 500;
-            font-family: inherit;
-            text-decoration: none;
-            cursor: pointer;
-            border-radius: 60px;          /* Мягкая форма, но без агрессивного футуризма */
-            transition: none;             /* Никакой анимации, только мгновенное изменение */
-            letter-spacing: 0.5px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            border: 1px solid #1b5e20;
-        }
-
-        /* При наведении — чуть более тёмный зелёный, мгновенно */
-        .download-btn:hover {
-            background-color: #1b5e20;
-            box-shadow: none;
-            border-color: #0e3f12;
-        }
-
-        /* При нажатии — эффект легкого затемнения */
-        .download-btn:active {
-            background-color: #145218;
-            transform: none;
-        }
-
-        /* Небольшой декоративный текст снизу (не отвлекает, но дополняет стиль) */
-        .info-note {
-            margin-top: 2rem;
-            font-size: 0.75rem;
-            color: #6a8b5e;
-            background: #f2f8ec;
-            display: inline-block;
-            padding: 6px 14px;
-            border-radius: 40px;
-            border: 0.5px solid #cbe5bc;
-        }
-
-        /* Адаптивность: на маленьких экранах кнопка остается комфортной */
-        @media (max-width: 480px) {
-            .card {
-                padding: 1.8rem 1.2rem;
-            }
-            .download-btn {
-                padding: 12px 28px;
-                font-size: 1.4rem;
-            }
-            .title {
-                font-size: 1.4rem;
-            }
-        }
-
-        /* Исключительно чистый зелёный стиль, без лишних бликов, теней и анимаций */
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ОГЭ — решения вариантов</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#090e0b;color:#eef5ef;font-family:Arial,sans-serif;padding:16px}
+header,.main{max-width:850px;margin:auto}
+header{padding:12px 0 20px}
+h1{color:#64e995;margin:0 0 7px;font-size:26px}
+.sub{color:#87978c;font-size:14px}
+.tabs{display:flex;gap:8px;max-width:850px;margin:10px auto 18px;position:sticky;top:0;background:#090e0b;padding:10px 0;z-index:5}
+.tab{flex:1;border:1px solid #29392e;background:#141c17;color:#dce9df;padding:13px 5px;border-radius:11px;font-weight:bold}
+.tab.active{background:#54db86;color:#07130b;border-color:#54db86}
+input{width:100%;padding:14px;background:#141c17;border:1px solid #29392e;border-radius:11px;color:white;font-size:15px;outline:none;margin-bottom:14px}
+.info{padding:12px;background:#14271b;border:1px solid #285b39;border-radius:11px;color:#a9e9bd;font-size:13px;margin-bottom:15px}
+.task{background:#141a16;border:1px solid #29352d;border-radius:13px;padding:15px;margin-bottom:10px}
+.task h3{font-size:16px;color:#75e99e;margin:0 0 10px}
+.solution{font-size:14px;line-height:1.55;color:#c4d0c7}
+.answer{background:#1b3022;color:#81efa5;padding:10px;border-radius:8px;margin-top:12px;font-size:14px;font-weight:bold}
+.unknown{background:#302719;color:#f0ca83}
+.num{font-size:12px;color:#829087;margin-bottom:7px}
+.empty{text-align:center;color:#8c9b91;padding:30px}
+footer{text-align:center;color:#718077;font-size:12px;padding:25px 0}
+</style>
 </head>
 <body>
-    <div class="card">
-        <!-- Небольшой зелёный заголовок (акцент, но не перетягивает внимание) -->
-        <div class="title">AVO VPN</div>
-        <div class="sub">стабильное соединение</div>
 
-        <!-- 
-            Единственная кнопка загрузки — прямая ссылка на APK файл.
-            При клике начинается скачивание avoVPN.2.9.tv.apk с вашего CDN.
-            Зелёная цветовая гамма, приятная глазу.
-        -->
-        <a href="https://10b67809-3268-49b1-a858-db24324b66cf.selcdn.net/avoVPN.2.9.tv.apk"
-           class="download-btn">
-            📥 Скачать
-        </a>
+<header>
+<h1>ОГЭ · Математика</h1>
+<div class="sub">3 варианта · краткие решения · ответы</div>
+</header>
 
-        <!-- Минимальная подпись: просто файл, без навязчивости -->
-        <div class="info-note">
-            версия 2.9 для TV / APK
-        </div>
-    </div>
+<div class="tabs">
+<button class="tab active" onclick="selectVariant(0)">Вариант 1</button>
+<button class="tab" onclick="selectVariant(1)">Вариант 2</button>
+<button class="tab" onclick="selectVariant(2)">Вариант 3</button>
+</div>
 
-    <!-- 
-        Итог: 
-        - Зелёный дизайн, спокойная природная палитра.
-        - Ровно одна кнопка скачивания (плюс минимальные декоративные надписи, не нарушающие ТЗ).
-        - Быстрая загрузка, без сложных скриптов.
-        - При клике — загрузка APK файла с указанного URL.
-        - Всё просто, но с узнаваемым зелёным акцентом. 
-    -->
+<div class="main">
+<input id="search" placeholder="Поиск задания..." oninput="render()">
+<div class="info" id="info"></div>
+<div id="tasks"></div>
+</div>
+
+<footer>Подготовка к ОГЭ по математике</footer>
+
+<script>
+const data = [
+{
+id:"83584157",
+tasks:[
+["План квартиры","По плану: коридор — 2, кладовая — 4, санузел — 3, гостиная — 6.","2436"],
+["План квартиры","Для точного решения нужно проверить рисунок задания.","Нужна проверка",1],
+["План квартиры","Для точного решения нужно проверить рисунок задания.","Нужна проверка",1],
+["План квартиры","Для точного решения нужно проверить рисунок задания.","Нужна проверка",1],
+["Интернет","900 + 50 × 2 = 1000 рублей. Это выгоднее остальных тарифов.","1000 руб."],
+["Вычисление","3,6 − 4,1 = −0,5.","−0,5"],
+["Координатная прямая","По рисунку верно утверждение №4.","4"],
+["Степени","(3 × 10)⁸ / (3⁶ × 10⁷) = 3² × 10 = 90.","90"],
+["Уравнение","2x² + 14x = 0; 2x(x + 7) = 0.","−7; 0"],
+["Вероятность","11 / 20 = 0,55.","0,55"],
+["Графики функций","А — 1, Б — 3, В — 2.","132"],
+["Формула","R = 60,5 / 5,5² = 2.","2"],
+["Неравенство","x − 7,4 ≥ 0 и x + 2 ≥ 3. Получаем x ≥ 7,4. На рисунке №1.","1"],
+["Уменьшение массы","160 / 2⁵ = 5 мг.","5 мг"],
+["Геометрия","Для точного решения нужно проверить рисунок задания.","Нужна проверка",1],
+["Тригонометрия","S = 200√3. При угле 60° прилежащий катет равен 20.","20"],
+["Трапеция","Соседние углы в трапеции в сумме дают 180°. Больший угол: 180° − 70° = 110°.","110°"],
+["Площадь фигуры","Для точного решения нужно проверить рисунок на клетчатой бумаге.","Нужна проверка",1],
+["Геометрические утверждения","Верны утверждения 2 и 3.","23"],
+["Уравнение","Пусть t = (x − 4)². Тогда t² − 4t − 21 = 0. t = 7. Значит, x = 4 ± √7.","4 − √7; 4 + √7"],
+["Средняя скорость","Весь путь: 765 км. Время: 5 + 2 + 3 = 10 ч. 765 / 10 = 76,5.","76,5 км/ч"],
+["График функции","Для точного ответа нужно проверить формулу и график в PDF.","Нужна проверка",1],
+["Окружность","По свойствам окружности BH = PK.","12"],
+["Подобие треугольников","AD ∥ BC, поэтому соответствующие углы равны. Треугольники CBD и ADB подобны по двум углам.","Доказано"],
+["Геометрия","Для точного решения нужно проверить чертёж задания.","Нужна проверка",1]
+]
+},
+{
+id:"83584288",
+tasks:[
+["Шины","Для диска 16″ подходят шины 185/50, 195/45 и 205/45. Минимальная ширина — 185.","185"],
+["Шины","165 × 0,70 = 115,5 мм.","115,5 мм"],
+["Диаметр колеса","15 × 25,4 + 2 × 175 × 0,6 = 591 мм.","591 мм"],
+["Изменение диаметра","Диаметр новой шины: 581,9 мм. 591 − 581,9 = 9,1 мм.","9,1 мм"],
+["Изменение диаметра","Новый диаметр — 595,5 мм. Прирост примерно 0,8%.","0,8%"],
+["Вычисление","Условие выражения нужно сверить с изображением PDF.","Нужна проверка",1],
+["Координатная прямая","Нужно проверить рисунок задания.","Нужна проверка",1],
+["Степени","Условие выражения нужно сверить с изображением PDF.","Нужна проверка",1],
+["Уравнение","Условие уравнения нужно сверить с изображением PDF.","Нужна проверка",1],
+["Вероятность","1 / 10 = 0,1.","0,1"],
+["Графики функций","Нужно сверить графики и формулы по изображению.","Нужна проверка",1],
+["Площадь четырёхугольника","Часть формулы и исходные значения не распознаны в PDF.","Нужна проверка",1],
+["Неравенство","Нужно проверить условие и рисунки в PDF.","Нужна проверка",1],
+["Рост массы","13 × 3³ = 351 мг.","351 мг"],
+["Прямоугольный треугольник","Нужно проверить условие и чертёж в PDF.","Нужна проверка",1],
+["Окружность","Вписанный угол равен половине центрального: 128° / 2 = 64°.","64°"],
+["Площадь трапеции","Площадь трапеции AECB составляет 3/4 площади параллелограмма: 140 × 3/4 = 105.","105"],
+["Площадь фигуры","Нужно проверить изображение на клетчатой бумаге.","Нужна проверка",1],
+["Геометрическое утверждение","Верно утверждение №3: угол, опирающийся на диаметр, прямой.","3"],
+["Система уравнений","Условие системы нужно проверить по изображению PDF.","Нужна проверка",1],
+["Теплоход","Составляем уравнение: 285/(34 + v) + 285/(34 − v) = 17. Требуется проверить вычисление корня.","Нужна проверка",1],
+["График функции","Формула функции не полностью распознана в PDF.","Нужна проверка",1],
+["Подобие треугольников","MN/AC = 17/51 = 1/3. BC = 48, BN = 48 × 1/3 = 16.","16"],
+["Подобие треугольников","Треугольники прямоугольные и имеют общий угол C. Они подобны по двум углам.","Доказано"],
+["Геометрия","Нужно проверить чертёж и условие задания.","Нужна проверка",1]
+]
+},
+{
+id:"83584358",
+tasks:[
+["Форматы бумаги","A0 — №3, A1 — №4, A3 — №2, A4 — №1.","3421"],
+["Форматы бумаги","Из одного листа A2 получается два листа A3.","2"],
+["Площадь листа","Площадь A1 равна 0,5 м² = 5000 см².","5000 см²"],
+["Форматы бумаги","Длинная сторона A6 равна 148,5 мм. Округляем до 150 мм.","150 мм"],
+["Масса бумаги","Площадь A5 — 1/32 м². Масса одного листа — 4,5 г. 4,5 × 1000 = 4500 г.","4500 г"],
+["Вычисление","3,2 × 6,2 = 19,84.","19,84"],
+["Координатная прямая","Число 0,271 соответствует точке A.","1"],
+["Степени","4⁻¹⁰ × (4³)⁴ = 4² = 16.","16"],
+["Уравнение","8 + 7x = 9x + 4. 4 = 2x. x = 2.","2"],
+["Вероятность","Исправных фонариков: 80 − 12 = 68. 68/80 = 0,85.","0,85"],
+["Графики функций","А — 1, Б — 3, В — 2.","132"],
+["Электричество","P = I²R. R = 96 / 4² = 6 Ом.","6 Ом"],
+["Неравенство","x < 3 и 4 − x > 0. Получаем x < 3. На рисунке №3.","3"],
+["Последовательность","Разность между рядами: 3. Четырнадцатый ряд: 27 + 9 × 3 = 54.","54"],
+["Биссектриса","AD — биссектриса, поэтому 46° / 2 = 23°.","23°"],
+["Окружность","Угол между касательной и хордой равен половине дуги: 56° / 2 = 28°.","28°"],
+["Трапеция","Угол BAC = 62° + 9° = 71°. Больший угол трапеции: 180° − 71° = 109°.","109°"],
+["Площадь параллелограмма","Основание — 3 клетки, высота — 6 клеток. S = 3 × 6 = 18.","18"],
+["Геометрические утверждения","Верны утверждения 1 и 2. Утверждение 3 неверно.","12"],
+["Неравенство","Разложение: (x + 4)(x − 2)²(x − 7) ≥ 0. Решение: x ≤ −4, x = 2 или x ≥ 7.","x ≤ −4; x = 2; x ≥ 7"],
+["Баржа","Составляем уравнение: 40/(v + 5) + 30/(v − 5) = 5. Получаем v = 15 км/ч.","15 км/ч"],
+["График функции","Предположительный ответ: m = −15. Требуется дополнительная проверка графика.","−15 (проверить)",1],
+["Трапеция","Боковая сторона равна 13, высота — 12. S = (8 + 18) × 12 / 2 = 156.","156"],
+["Геометрия","∠ABD = ∠ACD, значит, ABCD — вписанный четырёхугольник. Углы DAC и DBC опираются на одну дугу DC.","Доказано"],
+["Геометрия","Нужно дополнительно проверить чертёж и условие задания.","Нужна проверка",1]
+]
+}
+];
+
+let current=0;
+
+function selectVariant(n){
+ current=n;
+ document.querySelectorAll(".tab").forEach((b,i)=>{
+  b.classList.toggle("active",i===n);
+ });
+ document.getElementById("search").value="";
+ render();
+}
+
+function render(){
+ const variant=data[current];
+ const query=document.getElementById("search").value.toLowerCase().trim();
+ document.getElementById("info").textContent=
+ "Номер варианта: "+variant.id+" · Всего заданий: 25";
+
+ const list=document.getElementById("tasks");
+ list.innerHTML="";
+
+ let count=0;
+
+ variant.tasks.forEach((task,index)=>{
+  const number=index+1;
+  const text=(number+" "+task[0]+" "+task[1]+" "+task[2]).toLowerCase();
+
+  if(query && !text.includes(query)) return;
+
+  count++;
+
+  const card=document.createElement("div");
+  card.className="task";
+
+  const num=document.createElement("div");
+  num.className="num";
+  num.textContent="ЗАДАНИЕ №"+number;
+
+  const title=document.createElement("h3");
+  title.textContent=task[0];
+
+  const solution=document.createElement("div");
+  solution.className="solution";
+  solution.textContent=task[1];
+
+  const answer=document.createElement("div");
+  answer.className="answer"+(task[3]?" unknown":"");
+  answer.textContent="Ответ: "+task[2];
+
+  card.append(num,title,solution,answer);
+  list.appendChild(card);
+ });
+
+ if(count===0){
+  list.innerHTML='<div class="empty">Ничего не найдено</div>';
+ }
+}
+
+render();
+</script>
 </body>
 </html>
